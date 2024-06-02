@@ -1,0 +1,24 @@
+name: Release Chrome Extension
+description: Publish a chrome extension in the Chrome Web Store
+author: Shinya Ueoka
+
+inputs:
+  extension-id:
+    description: ID of the extension to be published
+    required: true
+  extension-path:
+    description: Path to the extension to be published
+    required: true
+  oauth-client-id:
+    description: OAuth Client ID for Chrome Web Store API
+    required: true
+  oauth-client-secret:
+    description: OAuth Client Secret for Chrome Web Store API
+    required: true
+  oauth-refresh-token:
+    description: OAuth Refresh Token for Chrome Web Store API
+    required: true
+
+runs:
+  using: node20
+  main: dist/index.js

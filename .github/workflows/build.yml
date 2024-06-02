@@ -1,25 +1,41 @@
 name: 'Build'
+
 on:
-  pull_request:
-  push:
-    branches-ignore:
-      - master
-  workflow_call:
+  - push
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Clone repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version-file: 'package.json'
-          cache: 'yarn'
-      - run: yarn install --immutable
-      - run: yarn lint
-      - run: yarn build
-      - run: yarn package
-      - uses: actions/upload-artifact@v4
+          node-version-file: .nvmrc
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn install --immutable
+
+      - name: Lint
+        run: yarn lint
+
+      - name: Package
+        run: yarn package
+
+      - name: Commit package
+        uses: EndBug/add-and-commit@v9
         with:
-          name: dist
+          fetch: true
+          default_author: github_actions
+          message: Update dist
+          pathspec_error_handling: exitImmediately
+          push: true
+
+      - name: Upload package
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-chrome-extension
           path: ./dist/

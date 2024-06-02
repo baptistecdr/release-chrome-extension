@@ -30,10 +30,8 @@ async function run(): Promise<void> {
   console.log(`Published with result: ${publishResult.status.join(", ")}`);
 }
 
-(async () => {
-  try {
-    await run();
-  } catch (error) {
-    core.setFailed(String(error));
-  }
-})();
+try {
+  await run();
+} catch (error) {
+  core.setFailed(String(error));
+}

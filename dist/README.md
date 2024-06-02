@@ -1,15 +1,13 @@
-# release-chrome-extension
+# Release Chrome Extension
 
 This is a GitHub Action to publish a Chrome extension to the Chrome Web Store.
 
-## Usage
+## Quick start
 
 The minimal usage is as follows:
 
 ```yaml
-steps:
-steps:
-- uses: browser-actions/release-chrome-extension@latest
+- uses: baptistecdr/release-chrome-extension
   with:
     extension-id: "********************************"
     extension-path: "path/to/your/extension.zip"
@@ -18,15 +16,17 @@ steps:
     oauth-refresh-token: ${{ secrets.OAUTH_REFRESH_TOKEN }}
 ```
 
-The `oauth-client-id`, `oauth-client-secret`, and `refresh-token` are all required to authenticate with the Chrome Web Store API. You can find more information on how to get these values [here](https://developer.chrome.com/webstore/using_webstore_api#beforeyoubegin).  There is also a mock OAuth2 application that can be used to get a refresh token.  You can get the token by running the following command:
+The `oauth-client-id`, `oauth-client-secret`, and `refresh-token` are all required to authenticate with the Chrome Web Store API. You can find more information on how to get these values [here](https://developer.chrome.com/webstore/using_webstore_api#beforeyoubegin).
 
-```console
-$ node oauth-mock-app/server.mjs
+There is also a mock OAuth2 application that can be used to get a refresh token.  You can get the token by running the following command:
+
+```bash
+node oauth-mock-app/server.mjs
 ```
 
 ### Inputs
 
-All supported outputs are the following:
+All supported inputs are the following:
 
 | Name                  | Description                         | Required |
 | ---                   | ---                                 | ---      |
@@ -36,6 +36,18 @@ All supported outputs are the following:
 | `oauth-client-secret` | The OAuth2 client secret.           | Yes      |
 | `oauth-refresh-token` | The OAuth2 refresh token.           | Yes      |
 
-## License
+## How to build
 
-[MIT](LICENSE)
+- Install [Node.JS LTS](https://nodejs.org/)
+- Clone the project
+- Run `yarn install`
+- Run `yarn package`
+
+## Bugs and feature requests
+
+Have a bug or a feature request? Please first search for existing and closed issues. If your problem or idea is not
+addressed yet, [please open a new issue](https://github.com/baptistecdr/release-chrome-extension/issues/new).
+
+## Contributing
+
+Contributions are welcome!

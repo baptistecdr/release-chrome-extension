@@ -19,8 +19,8 @@ async function run(): Promise<void> {
   ) {
     throw new Error(
       `Failed to upload: ${uploadResult.uploadState} ${JSON.stringify(
-        uploadResult.itemError
-      )}`
+        uploadResult.itemError,
+      )}`,
     );
   }
 

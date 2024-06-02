@@ -2,7 +2,7 @@
   "name": "release-chrome-extension",
   "version": "1.0.1-0",
   "description": "Publish a chrome extension in the Chrome Web Store ",
-  "main": "index.js",
+  "main": "dist/index.js",
   "type": "module",
   "repository": "git@github.com:browser-actions/release-chrome-extension.git",
   "author": "Shin'ya Ueoka <ueokande@i-beam.org>",

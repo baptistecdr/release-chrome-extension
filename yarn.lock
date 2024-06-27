@@ -1236,13 +1236,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"googleapis@npm:140.0.0":
-  version: 140.0.0
-  resolution: "googleapis@npm:140.0.0"
+"googleapis@npm:140.0.1":
+  version: 140.0.1
+  resolution: "googleapis@npm:140.0.1"
   dependencies:
     google-auth-library: "npm:^9.0.0"
     googleapis-common: "npm:^7.0.0"
-  checksum: 10c0/723aa9ebb28e898ac1ecb1275b06602409175661cf055bb2e9c235c6cff924ff6e9cb536123b1f4a5226cb134572147010985f6ea21a200446c737adf4ab3b08
+  checksum: 10c0/ed90e0d9bff7b35598fa0161cf0a2e3f874a6479dd4ecca89d6e5b8c3de886db33e9b73251acf2db5b931ec5ffea99e0c8751a26f0ef1297ad2ee0c5c89487d3
   languageName: node
   linkType: hard
 
@@ -2086,7 +2086,7 @@ __metadata:
     eslint: "npm:8.57.0"
     eslint-config-prettier: "npm:9.1.0"
     eslint-plugin-prettier: "npm:5.1.3"
-    googleapis: "npm:140.0.0"
+    googleapis: "npm:140.0.1"
     node-fetch: "npm:3.3.2"
     open: "npm:10.1.0"
     prettier: "npm:3.3.2"

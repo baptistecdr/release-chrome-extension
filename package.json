@@ -23,7 +23,7 @@
     "@vercel/ncc": "0.38.1",
     "googleapis": "140.0.1",
     "node-fetch": "3.3.2",
-    "typescript": "5.5.2"
+    "typescript": "5.5.3"
   },
   "scripts": {
     "lint": "eslint --ext .ts src/",

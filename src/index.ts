@@ -1,6 +1,6 @@
-import { CWSClient } from "./cws";
-import fs from "fs";
+import fs from "node:fs";
 import * as core from "@actions/core";
+import { CWSClient } from "./cws";
 
 async function run(): Promise<void> {
   const clientId = core.getInput("oauth-client-id");
@@ -13,15 +13,8 @@ async function run(): Promise<void> {
 
   const zip = fs.createReadStream(extensionPath);
   const uploadResult = await c.updateItem(extensionId, zip);
-  if (
-    uploadResult.uploadState !== "SUCCESS" &&
-    uploadResult.uploadState !== "IN_PROGRESS"
-  ) {
-    throw new Error(
-      `Failed to upload: ${uploadResult.uploadState} ${JSON.stringify(
-        uploadResult.itemError,
-      )}`,
-    );
+  if (uploadResult.uploadState !== "SUCCESS" && uploadResult.uploadState !== "IN_PROGRESS") {
+    throw new Error(`Failed to upload: ${uploadResult.uploadState} ${JSON.stringify(uploadResult.itemError)}`);
   }
 
   core.info(`Uploaded extension: ${uploadResult.id}`);

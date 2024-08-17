@@ -686,13 +686,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"googleapis@npm:140.0.1":
-  version: 140.0.1
-  resolution: "googleapis@npm:140.0.1"
+"googleapis@npm:142.0.0":
+  version: 142.0.0
+  resolution: "googleapis@npm:142.0.0"
   dependencies:
     google-auth-library: "npm:^9.0.0"
     googleapis-common: "npm:^7.0.0"
-  checksum: 10c0/ed90e0d9bff7b35598fa0161cf0a2e3f874a6479dd4ecca89d6e5b8c3de886db33e9b73251acf2db5b931ec5ffea99e0c8751a26f0ef1297ad2ee0c5c89487d3
+  checksum: 10c0/a94839fd994df8455df2dd0a524b83249a8efd862e970fb6f5c991cfa73b876eaa30bc9aa738c690dd35618f5598c2c2f685c60a278d293d260f815e7a5944d2
   languageName: node
   linkType: hard
 
@@ -1237,7 +1237,7 @@ __metadata:
     "@types/node": "npm:20.15.0"
     "@types/node-fetch": "npm:2.6.11"
     "@vercel/ncc": "npm:0.38.1"
-    googleapis: "npm:140.0.1"
+    googleapis: "npm:142.0.0"
     node-fetch: "npm:3.3.2"
     open: "npm:10.1.0"
     typescript: "npm:5.5.4"

@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.8.3",
-    "@types/node": "20.16.0",
+    "@types/node": "20.16.1",
     "@types/node-fetch": "2.6.11",
     "open": "10.1.0"
   },

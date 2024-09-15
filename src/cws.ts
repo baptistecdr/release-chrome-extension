@@ -1,7 +1,4 @@
-import type { ReadStream } from "node:fs";
 import { google } from "googleapis";
-import fetch from "node-fetch";
-import type { BodyInit } from "node-fetch";
 
 type UploadState = "FAILURE" | "IN_PROGRESS" | "NOT_FOUND" | "SUCCESS";
 
@@ -58,7 +55,7 @@ export class CWSClient {
     return this.proceed<ItemReponse>("GET", `/chromewebstore/v1.1/items/${extensionId}?projection=${projection}`);
   }
 
-  async updateItem(extensionId: string, zip: ReadStream): Promise<ItemReponse> {
+  async updateItem(extensionId: string, zip: Blob): Promise<ItemReponse> {
     return this.proceed<ItemReponse>("PUT", `/upload/chromewebstore/v1.1/items/${extensionId}`, zip);
   }
 

@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
-    "@types/node": "22.13.7",
+    "@types/node": "22.13.8",
     "open": "10.1.0"
   },
   "packageManager": "yarn@4.6.0"

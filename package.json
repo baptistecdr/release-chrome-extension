@@ -15,7 +15,7 @@
   "dependencies": {
     "@actions/core": "1.11.1",
     "@vercel/ncc": "0.38.3",
-    "googleapis": "146.0.0",
+    "googleapis": "148.0.0",
     "typescript": "5.8.2"
   },
   "devDependencies": {

@@ -16,7 +16,7 @@
     "@actions/core": "1.11.1",
     "@vercel/ncc": "0.38.3",
     "googleapis": "148.0.0",
-    "typescript": "5.8.2"
+    "typescript": "5.8.3"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",

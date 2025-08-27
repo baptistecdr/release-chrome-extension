@@ -692,13 +692,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"googleapis@npm:157.0.0":
-  version: 157.0.0
-  resolution: "googleapis@npm:157.0.0"
+"googleapis@npm:159.0.0":
+  version: 159.0.0
+  resolution: "googleapis@npm:159.0.0"
   dependencies:
     google-auth-library: "npm:^10.2.0"
     googleapis-common: "npm:^8.0.0"
-  checksum: 10c0/33d1ef31271c82e4c261c461c1fe1e01b01abf8d946c75159ec1b3706e9437e4ce36360defcc9f5fc666bed646237891aeb72bf7071fb8324a1925f8b75dae54
+  checksum: 10c0/6bc6ad0561dc7978a93e1bfc1612097ecbe1d1490ad642927858d45c35c6e355aa6521ec14de45fb7cc460f12fc26cce18ba574966d256792f8c923d53836d8f
   languageName: node
   linkType: hard
 
@@ -1176,7 +1176,7 @@ __metadata:
     "@biomejs/biome": "npm:2.2.2"
     "@types/node": "npm:22.18.0"
     "@vercel/ncc": "npm:0.38.3"
-    googleapis: "npm:157.0.0"
+    googleapis: "npm:159.0.0"
     open: "npm:10.2.0"
     typescript: "npm:5.9.2"
   languageName: unknown

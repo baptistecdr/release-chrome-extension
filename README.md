@@ -29,7 +29,7 @@ node oauth-mock-app/server.mjs
 All supported inputs are the following:
 
 | Name                  | Description                         | Required |
-| ---                   | ---                                 | ---      |
+|-----------------------|-------------------------------------|----------|
 | `extension-id`        | The ID of the extension to publish. | Yes      |
 | `extension-path`      | The path to the extension zip file. | Yes      |
 | `oauth-client-id`     | The OAuth2 client ID.               | Yes      |
@@ -40,8 +40,8 @@ All supported inputs are the following:
 
 - Install [Node.JS LTS](https://nodejs.org/)
 - Clone the project
-- Run `yarn install`
-- Run `yarn package`
+- Run `npm install`
+- Run `npm run package`
 
 ## Bugs and feature requests
 

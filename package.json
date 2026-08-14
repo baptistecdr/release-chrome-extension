@@ -21,6 +21,6 @@
   "devDependencies": {
     "@biomejs/biome": "2.5.8",
     "@types/node": "24.13.3",
-    "open": "11.0.0"
+    "open": "11.0.1"
   }
 }

@@ -18,7 +18,7 @@ The minimal usage is as follows:
 
 The `oauth-client-id`, `oauth-client-secret`, and `refresh-token` are all required to authenticate with the Chrome Web Store API. You can find more information on how to get these values [here](https://developer.chrome.com/webstore/using_webstore_api#beforeyoubegin).
 
-There is also a mock OAuth2 application that can be used to get a refresh token.  You can get the token by running the following command:
+There is also a mock OAuth2 application that can be used to get a refresh token. You can get the token by running the following command:
 
 ```bash
 node oauth-mock-app/server.mjs
@@ -29,7 +29,7 @@ node oauth-mock-app/server.mjs
 All supported inputs are the following:
 
 | Name                  | Description                         | Required |
-|-----------------------|-------------------------------------|----------|
+| --------------------- | ----------------------------------- | -------- |
 | `extension-id`        | The ID of the extension to publish. | Yes      |
 | `extension-path`      | The path to the extension zip file. | Yes      |
 | `oauth-client-id`     | The OAuth2 client ID.               | Yes      |

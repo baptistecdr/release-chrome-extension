@@ -37894,6 +37894,39 @@ var agentidentity_v1;
                 return (0, googleapis_common_1.createAPIRequest)(parameters);
             }
         }
+        resolveAuthorization(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params =
+                    {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://agentidentity.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1/{+name}:resolveAuthorization').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'POST',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['name'],
+                pathParams: ['name'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
         revokeAuthorization(paramsOrCallback, optionsOrCallback, callback) {
             let params = (paramsOrCallback ||
                 {});
@@ -40705,8 +40738,10 @@ var agentregistry_v1;
         aiApplications;
         bindings;
         endpoints;
+        findings;
         mcpServers;
         operations;
+        publishers;
         services;
         skills;
         constructor(context) {
@@ -40715,8 +40750,10 @@ var agentregistry_v1;
             this.aiApplications = new Resource$Projects$Locations$Aiapplications(this.context);
             this.bindings = new Resource$Projects$Locations$Bindings(this.context);
             this.endpoints = new Resource$Projects$Locations$Endpoints(this.context);
+            this.findings = new Resource$Projects$Locations$Findings(this.context);
             this.mcpServers = new Resource$Projects$Locations$Mcpservers(this.context);
             this.operations = new Resource$Projects$Locations$Operations(this.context);
+            this.publishers = new Resource$Projects$Locations$Publishers(this.context);
             this.services = new Resource$Projects$Locations$Services(this.context);
             this.skills = new Resource$Projects$Locations$Skills(this.context);
         }
@@ -41556,6 +41593,77 @@ var agentregistry_v1;
         }
     }
     agentregistry_v1.Resource$Projects$Locations$Endpoints = Resource$Projects$Locations$Endpoints;
+    class Resource$Projects$Locations$Findings {
+        context;
+        constructor(context) {
+            this.context = context;
+        }
+        get(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://agentregistry.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1/{+name}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['name'],
+                pathParams: ['name'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        list(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://agentregistry.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1/{+parent}/findings').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['parent'],
+                pathParams: ['parent'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+    }
+    agentregistry_v1.Resource$Projects$Locations$Findings = Resource$Projects$Locations$Findings;
     class Resource$Projects$Locations$Mcpservers {
         context;
         constructor(context) {
@@ -41794,6 +41902,77 @@ var agentregistry_v1;
         }
     }
     agentregistry_v1.Resource$Projects$Locations$Operations = Resource$Projects$Locations$Operations;
+    class Resource$Projects$Locations$Publishers {
+        context;
+        constructor(context) {
+            this.context = context;
+        }
+        get(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://agentregistry.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1/{+name}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['name'],
+                pathParams: ['name'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        list(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://agentregistry.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1/{+parent}/publishers').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['parent'],
+                pathParams: ['parent'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+    }
+    agentregistry_v1.Resource$Projects$Locations$Publishers = Resource$Projects$Locations$Publishers;
     class Resource$Projects$Locations$Services {
         context;
         constructor(context) {
@@ -41963,8 +42142,106 @@ var agentregistry_v1;
     agentregistry_v1.Resource$Projects$Locations$Services = Resource$Projects$Locations$Services;
     class Resource$Projects$Locations$Skills {
         context;
+        revisions;
         constructor(context) {
             this.context = context;
+            this.revisions = new Resource$Projects$Locations$Skills$Revisions(this.context);
+        }
+        create(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://agentregistry.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1/{+parent}/skills').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'POST',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['parent'],
+                pathParams: ['parent'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        delete(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://agentregistry.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1/{+name}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'DELETE',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['name'],
+                pathParams: ['name'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        get(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://agentregistry.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1/{+name}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['name'],
+                pathParams: ['name'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
         }
         getIamPolicy(paramsOrCallback, optionsOrCallback, callback) {
             let params = (paramsOrCallback ||
@@ -41989,6 +42266,102 @@ var agentregistry_v1;
                 params,
                 requiredParams: ['resource'],
                 pathParams: ['resource'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        list(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://agentregistry.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1/{+parent}/skills').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['parent'],
+                pathParams: ['parent'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        patch(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://agentregistry.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1/{+name}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'PATCH',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['name'],
+                pathParams: ['name'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        search(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://agentregistry.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1/{+parent}/skills:search').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['parent'],
+                pathParams: ['parent'],
                 context: this.context,
             };
             if (callback) {
@@ -42065,6 +42438,143 @@ var agentregistry_v1;
         }
     }
     agentregistry_v1.Resource$Projects$Locations$Skills = Resource$Projects$Locations$Skills;
+    class Resource$Projects$Locations$Skills$Revisions {
+        context;
+        constructor(context) {
+            this.context = context;
+        }
+        create(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params =
+                    {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://agentregistry.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1/{+parent}/revisions').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'POST',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['parent'],
+                pathParams: ['parent'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        delete(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params =
+                    {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://agentregistry.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1/{+name}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'DELETE',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['name'],
+                pathParams: ['name'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        get(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://agentregistry.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1/{+name}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['name'],
+                pathParams: ['name'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        list(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://agentregistry.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1/{+parent}/revisions').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['parent'],
+                pathParams: ['parent'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+    }
+    agentregistry_v1.Resource$Projects$Locations$Skills$Revisions = Resource$Projects$Locations$Skills$Revisions;
 })(agentregistry_v1 || (exports.agentregistry_v1 = agentregistry_v1 = {}));
 //# sourceMappingURL=v1.js.map
 
@@ -42134,6 +42644,7 @@ var agentregistry_v1alpha;
         aiApplications;
         bindings;
         endpoints;
+        findings;
         mcpServers;
         operations;
         publishers;
@@ -42145,6 +42656,7 @@ var agentregistry_v1alpha;
             this.aiApplications = new Resource$Projects$Locations$Aiapplications(this.context);
             this.bindings = new Resource$Projects$Locations$Bindings(this.context);
             this.endpoints = new Resource$Projects$Locations$Endpoints(this.context);
+            this.findings = new Resource$Projects$Locations$Findings(this.context);
             this.mcpServers = new Resource$Projects$Locations$Mcpservers(this.context);
             this.operations = new Resource$Projects$Locations$Operations(this.context);
             this.publishers = new Resource$Projects$Locations$Publishers(this.context);
@@ -42987,6 +43499,77 @@ var agentregistry_v1alpha;
         }
     }
     agentregistry_v1alpha.Resource$Projects$Locations$Endpoints = Resource$Projects$Locations$Endpoints;
+    class Resource$Projects$Locations$Findings {
+        context;
+        constructor(context) {
+            this.context = context;
+        }
+        get(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://agentregistry.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1alpha/{+name}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['name'],
+                pathParams: ['name'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        list(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://agentregistry.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1alpha/{+parent}/findings').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['parent'],
+                pathParams: ['parent'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+    }
+    agentregistry_v1alpha.Resource$Projects$Locations$Findings = Resource$Projects$Locations$Findings;
     class Resource$Projects$Locations$Mcpservers {
         context;
         constructor(context) {
@@ -169910,6 +170493,39 @@ var authorizedbuyersmarketplace_v1alpha;
                 return (0, googleapis_common_1.createAPIRequest)(parameters);
             }
         }
+        search(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl ||
+                'https://authorizedbuyersmarketplace.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1alpha/mediaPlanners:search').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: [],
+                pathParams: [],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
     }
     authorizedbuyersmarketplace_v1alpha.Resource$Mediaplanners = Resource$Mediaplanners;
 })(authorizedbuyersmarketplace_v1alpha || (exports.authorizedbuyersmarketplace_v1alpha = authorizedbuyersmarketplace_v1alpha = {}));
@@ -170427,6 +171043,39 @@ var authorizedbuyersmarketplace_v1beta;
                 return (0, googleapis_common_1.createAPIRequest)(parameters);
             }
         }
+        search(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl ||
+                'https://authorizedbuyersmarketplace.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1beta/mediaPlanners:search').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: [],
+                pathParams: [],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
     }
     authorizedbuyersmarketplace_v1beta.Resource$Mediaplanners = Resource$Mediaplanners;
 })(authorizedbuyersmarketplace_v1beta || (exports.authorizedbuyersmarketplace_v1beta = authorizedbuyersmarketplace_v1beta = {}));
@@ -170656,6 +171305,8 @@ var backupdr_v1;
     backupdr_v1.Resource$Projects = Resource$Projects;
     class Resource$Projects$Locations {
         context;
+        appliedAutoProtectionPolicies;
+        autoProtectionPolicies;
         backupPlanAssociations;
         backupPlans;
         backupVaults;
@@ -170667,6 +171318,10 @@ var backupdr_v1;
         trial;
         constructor(context) {
             this.context = context;
+            this.appliedAutoProtectionPolicies =
+                new Resource$Projects$Locations$Appliedautoprotectionpolicies(this.context);
+            this.autoProtectionPolicies =
+                new Resource$Projects$Locations$Autoprotectionpolicies(this.context);
             this.backupPlanAssociations =
                 new Resource$Projects$Locations$Backupplanassociations(this.context);
             this.backupPlans = new Resource$Projects$Locations$Backupplans(this.context);
@@ -170779,6 +171434,436 @@ var backupdr_v1;
         }
     }
     backupdr_v1.Resource$Projects$Locations = Resource$Projects$Locations;
+    class Resource$Projects$Locations$Appliedautoprotectionpolicies {
+        context;
+        constructor(context) {
+            this.context = context;
+        }
+        list(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params =
+                    {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://backupdr.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1/{+parent}/appliedAutoProtectionPolicies').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['parent'],
+                pathParams: ['parent'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+    }
+    backupdr_v1.Resource$Projects$Locations$Appliedautoprotectionpolicies = Resource$Projects$Locations$Appliedautoprotectionpolicies;
+    class Resource$Projects$Locations$Autoprotectionpolicies {
+        context;
+        bindings;
+        constructor(context) {
+            this.context = context;
+            this.bindings =
+                new Resource$Projects$Locations$Autoprotectionpolicies$Bindings(this.context);
+        }
+        create(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params =
+                    {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://backupdr.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1/{+parent}/autoProtectionPolicies').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'POST',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['parent'],
+                pathParams: ['parent'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        delete(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params =
+                    {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://backupdr.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1/{+name}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'DELETE',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['name'],
+                pathParams: ['name'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        get(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params =
+                    {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://backupdr.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1/{+name}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['name'],
+                pathParams: ['name'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        list(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params =
+                    {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://backupdr.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1/{+parent}/autoProtectionPolicies').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['parent'],
+                pathParams: ['parent'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        patch(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params =
+                    {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://backupdr.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1/{+name}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'PATCH',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['name'],
+                pathParams: ['name'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+    }
+    backupdr_v1.Resource$Projects$Locations$Autoprotectionpolicies = Resource$Projects$Locations$Autoprotectionpolicies;
+    class Resource$Projects$Locations$Autoprotectionpolicies$Bindings {
+        context;
+        matchingResources;
+        constructor(context) {
+            this.context = context;
+            this.matchingResources =
+                new Resource$Projects$Locations$Autoprotectionpolicies$Bindings$Matchingresources(this.context);
+        }
+        create(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params =
+                    {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://backupdr.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1/{+parent}/bindings').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'POST',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['parent'],
+                pathParams: ['parent'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        get(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params =
+                    {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://backupdr.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1/{+name}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['name'],
+                pathParams: ['name'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        initiateDelete(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params =
+                    {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://backupdr.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1/{+name}:initiateDelete').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'POST',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['name'],
+                pathParams: ['name'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        list(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params =
+                    {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://backupdr.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1/{+parent}/bindings').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['parent'],
+                pathParams: ['parent'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+    }
+    backupdr_v1.Resource$Projects$Locations$Autoprotectionpolicies$Bindings = Resource$Projects$Locations$Autoprotectionpolicies$Bindings;
+    class Resource$Projects$Locations$Autoprotectionpolicies$Bindings$Matchingresources {
+        context;
+        constructor(context) {
+            this.context = context;
+        }
+        get(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params =
+                    {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://backupdr.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1/{+name}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['name'],
+                pathParams: ['name'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        list(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params =
+                    {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://backupdr.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1/{+parent}/matchingResources').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['parent'],
+                pathParams: ['parent'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+    }
+    backupdr_v1.Resource$Projects$Locations$Autoprotectionpolicies$Bindings$Matchingresources = Resource$Projects$Locations$Autoprotectionpolicies$Bindings$Matchingresources;
     class Resource$Projects$Locations$Backupplanassociations {
         context;
         constructor(context) {
@@ -178272,38 +179357,6 @@ var beyondcorp_v1;
         constructor(context) {
             this.context = context;
         }
-        create(paramsOrCallback, optionsOrCallback, callback) {
-            let params = (paramsOrCallback ||
-                {});
-            let options = (optionsOrCallback || {});
-            if (typeof paramsOrCallback === 'function') {
-                callback = paramsOrCallback;
-                params = {};
-                options = {};
-            }
-            if (typeof optionsOrCallback === 'function') {
-                callback = optionsOrCallback;
-                options = {};
-            }
-            const rootUrl = options.rootUrl || 'https://beyondcorp.googleapis.com/';
-            const parameters = {
-                options: Object.assign({
-                    url: (rootUrl + '/v1/{+parent}/appConnections').replace(/([^:]\/)\/+/g, '$1'),
-                    method: 'POST',
-                    apiVersion: '',
-                }, options),
-                params,
-                requiredParams: ['parent'],
-                pathParams: ['parent'],
-                context: this.context,
-            };
-            if (callback) {
-                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
-            }
-            else {
-                return (0, googleapis_common_1.createAPIRequest)(parameters);
-            }
-        }
         delete(paramsOrCallback, optionsOrCallback, callback) {
             let params = (paramsOrCallback ||
                 {});
@@ -178424,38 +179477,6 @@ var beyondcorp_v1;
                 params,
                 requiredParams: ['parent'],
                 pathParams: ['parent'],
-                context: this.context,
-            };
-            if (callback) {
-                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
-            }
-            else {
-                return (0, googleapis_common_1.createAPIRequest)(parameters);
-            }
-        }
-        patch(paramsOrCallback, optionsOrCallback, callback) {
-            let params = (paramsOrCallback ||
-                {});
-            let options = (optionsOrCallback || {});
-            if (typeof paramsOrCallback === 'function') {
-                callback = paramsOrCallback;
-                params = {};
-                options = {};
-            }
-            if (typeof optionsOrCallback === 'function') {
-                callback = optionsOrCallback;
-                options = {};
-            }
-            const rootUrl = options.rootUrl || 'https://beyondcorp.googleapis.com/';
-            const parameters = {
-                options: Object.assign({
-                    url: (rootUrl + '/v1/{+name}').replace(/([^:]\/)\/+/g, '$1'),
-                    method: 'PATCH',
-                    apiVersion: '',
-                }, options),
-                params,
-                requiredParams: ['name'],
-                pathParams: ['name'],
                 context: this.context,
             };
             if (callback) {
@@ -178571,38 +179592,6 @@ var beyondcorp_v1;
         constructor(context) {
             this.context = context;
         }
-        create(paramsOrCallback, optionsOrCallback, callback) {
-            let params = (paramsOrCallback ||
-                {});
-            let options = (optionsOrCallback || {});
-            if (typeof paramsOrCallback === 'function') {
-                callback = paramsOrCallback;
-                params = {};
-                options = {};
-            }
-            if (typeof optionsOrCallback === 'function') {
-                callback = optionsOrCallback;
-                options = {};
-            }
-            const rootUrl = options.rootUrl || 'https://beyondcorp.googleapis.com/';
-            const parameters = {
-                options: Object.assign({
-                    url: (rootUrl + '/v1/{+parent}/appConnectors').replace(/([^:]\/)\/+/g, '$1'),
-                    method: 'POST',
-                    apiVersion: '',
-                }, options),
-                params,
-                requiredParams: ['parent'],
-                pathParams: ['parent'],
-                context: this.context,
-            };
-            if (callback) {
-                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
-            }
-            else {
-                return (0, googleapis_common_1.createAPIRequest)(parameters);
-            }
-        }
         delete(paramsOrCallback, optionsOrCallback, callback) {
             let params = (paramsOrCallback ||
                 {});
@@ -178732,71 +179721,6 @@ var beyondcorp_v1;
                 return (0, googleapis_common_1.createAPIRequest)(parameters);
             }
         }
-        patch(paramsOrCallback, optionsOrCallback, callback) {
-            let params = (paramsOrCallback ||
-                {});
-            let options = (optionsOrCallback || {});
-            if (typeof paramsOrCallback === 'function') {
-                callback = paramsOrCallback;
-                params = {};
-                options = {};
-            }
-            if (typeof optionsOrCallback === 'function') {
-                callback = optionsOrCallback;
-                options = {};
-            }
-            const rootUrl = options.rootUrl || 'https://beyondcorp.googleapis.com/';
-            const parameters = {
-                options: Object.assign({
-                    url: (rootUrl + '/v1/{+name}').replace(/([^:]\/)\/+/g, '$1'),
-                    method: 'PATCH',
-                    apiVersion: '',
-                }, options),
-                params,
-                requiredParams: ['name'],
-                pathParams: ['name'],
-                context: this.context,
-            };
-            if (callback) {
-                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
-            }
-            else {
-                return (0, googleapis_common_1.createAPIRequest)(parameters);
-            }
-        }
-        reportStatus(paramsOrCallback, optionsOrCallback, callback) {
-            let params = (paramsOrCallback ||
-                {});
-            let options = (optionsOrCallback || {});
-            if (typeof paramsOrCallback === 'function') {
-                callback = paramsOrCallback;
-                params =
-                    {};
-                options = {};
-            }
-            if (typeof optionsOrCallback === 'function') {
-                callback = optionsOrCallback;
-                options = {};
-            }
-            const rootUrl = options.rootUrl || 'https://beyondcorp.googleapis.com/';
-            const parameters = {
-                options: Object.assign({
-                    url: (rootUrl + '/v1/{+appConnector}:reportStatus').replace(/([^:]\/)\/+/g, '$1'),
-                    method: 'POST',
-                    apiVersion: '',
-                }, options),
-                params,
-                requiredParams: ['appConnector'],
-                pathParams: ['appConnector'],
-                context: this.context,
-            };
-            if (callback) {
-                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
-            }
-            else {
-                return (0, googleapis_common_1.createAPIRequest)(parameters);
-            }
-        }
         resolveInstanceConfig(paramsOrCallback, optionsOrCallback, callback) {
             let params = (paramsOrCallback ||
                 {});
@@ -178902,38 +179826,6 @@ var beyondcorp_v1;
         context;
         constructor(context) {
             this.context = context;
-        }
-        create(paramsOrCallback, optionsOrCallback, callback) {
-            let params = (paramsOrCallback ||
-                {});
-            let options = (optionsOrCallback || {});
-            if (typeof paramsOrCallback === 'function') {
-                callback = paramsOrCallback;
-                params = {};
-                options = {};
-            }
-            if (typeof optionsOrCallback === 'function') {
-                callback = optionsOrCallback;
-                options = {};
-            }
-            const rootUrl = options.rootUrl || 'https://beyondcorp.googleapis.com/';
-            const parameters = {
-                options: Object.assign({
-                    url: (rootUrl + '/v1/{+parent}/appGateways').replace(/([^:]\/)\/+/g, '$1'),
-                    method: 'POST',
-                    apiVersion: '',
-                }, options),
-                params,
-                requiredParams: ['parent'],
-                pathParams: ['parent'],
-                context: this.context,
-            };
-            if (callback) {
-                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
-            }
-            else {
-                return (0, googleapis_common_1.createAPIRequest)(parameters);
-            }
         }
         delete(paramsOrCallback, optionsOrCallback, callback) {
             let params = (paramsOrCallback ||
@@ -180440,38 +181332,6 @@ var beyondcorp_v1alpha;
         constructor(context) {
             this.context = context;
         }
-        create(paramsOrCallback, optionsOrCallback, callback) {
-            let params = (paramsOrCallback ||
-                {});
-            let options = (optionsOrCallback || {});
-            if (typeof paramsOrCallback === 'function') {
-                callback = paramsOrCallback;
-                params = {};
-                options = {};
-            }
-            if (typeof optionsOrCallback === 'function') {
-                callback = optionsOrCallback;
-                options = {};
-            }
-            const rootUrl = options.rootUrl || 'https://beyondcorp.googleapis.com/';
-            const parameters = {
-                options: Object.assign({
-                    url: (rootUrl + '/v1alpha/{+parent}/appConnections').replace(/([^:]\/)\/+/g, '$1'),
-                    method: 'POST',
-                    apiVersion: '',
-                }, options),
-                params,
-                requiredParams: ['parent'],
-                pathParams: ['parent'],
-                context: this.context,
-            };
-            if (callback) {
-                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
-            }
-            else {
-                return (0, googleapis_common_1.createAPIRequest)(parameters);
-            }
-        }
         delete(paramsOrCallback, optionsOrCallback, callback) {
             let params = (paramsOrCallback ||
                 {});
@@ -180592,38 +181452,6 @@ var beyondcorp_v1alpha;
                 params,
                 requiredParams: ['parent'],
                 pathParams: ['parent'],
-                context: this.context,
-            };
-            if (callback) {
-                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
-            }
-            else {
-                return (0, googleapis_common_1.createAPIRequest)(parameters);
-            }
-        }
-        patch(paramsOrCallback, optionsOrCallback, callback) {
-            let params = (paramsOrCallback ||
-                {});
-            let options = (optionsOrCallback || {});
-            if (typeof paramsOrCallback === 'function') {
-                callback = paramsOrCallback;
-                params = {};
-                options = {};
-            }
-            if (typeof optionsOrCallback === 'function') {
-                callback = optionsOrCallback;
-                options = {};
-            }
-            const rootUrl = options.rootUrl || 'https://beyondcorp.googleapis.com/';
-            const parameters = {
-                options: Object.assign({
-                    url: (rootUrl + '/v1alpha/{+name}').replace(/([^:]\/)\/+/g, '$1'),
-                    method: 'PATCH',
-                    apiVersion: '',
-                }, options),
-                params,
-                requiredParams: ['name'],
-                pathParams: ['name'],
                 context: this.context,
             };
             if (callback) {
@@ -180739,38 +181567,6 @@ var beyondcorp_v1alpha;
         constructor(context) {
             this.context = context;
         }
-        create(paramsOrCallback, optionsOrCallback, callback) {
-            let params = (paramsOrCallback ||
-                {});
-            let options = (optionsOrCallback || {});
-            if (typeof paramsOrCallback === 'function') {
-                callback = paramsOrCallback;
-                params = {};
-                options = {};
-            }
-            if (typeof optionsOrCallback === 'function') {
-                callback = optionsOrCallback;
-                options = {};
-            }
-            const rootUrl = options.rootUrl || 'https://beyondcorp.googleapis.com/';
-            const parameters = {
-                options: Object.assign({
-                    url: (rootUrl + '/v1alpha/{+parent}/appConnectors').replace(/([^:]\/)\/+/g, '$1'),
-                    method: 'POST',
-                    apiVersion: '',
-                }, options),
-                params,
-                requiredParams: ['parent'],
-                pathParams: ['parent'],
-                context: this.context,
-            };
-            if (callback) {
-                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
-            }
-            else {
-                return (0, googleapis_common_1.createAPIRequest)(parameters);
-            }
-        }
         delete(paramsOrCallback, optionsOrCallback, callback) {
             let params = (paramsOrCallback ||
                 {});
@@ -180900,71 +181696,6 @@ var beyondcorp_v1alpha;
                 return (0, googleapis_common_1.createAPIRequest)(parameters);
             }
         }
-        patch(paramsOrCallback, optionsOrCallback, callback) {
-            let params = (paramsOrCallback ||
-                {});
-            let options = (optionsOrCallback || {});
-            if (typeof paramsOrCallback === 'function') {
-                callback = paramsOrCallback;
-                params = {};
-                options = {};
-            }
-            if (typeof optionsOrCallback === 'function') {
-                callback = optionsOrCallback;
-                options = {};
-            }
-            const rootUrl = options.rootUrl || 'https://beyondcorp.googleapis.com/';
-            const parameters = {
-                options: Object.assign({
-                    url: (rootUrl + '/v1alpha/{+name}').replace(/([^:]\/)\/+/g, '$1'),
-                    method: 'PATCH',
-                    apiVersion: '',
-                }, options),
-                params,
-                requiredParams: ['name'],
-                pathParams: ['name'],
-                context: this.context,
-            };
-            if (callback) {
-                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
-            }
-            else {
-                return (0, googleapis_common_1.createAPIRequest)(parameters);
-            }
-        }
-        reportStatus(paramsOrCallback, optionsOrCallback, callback) {
-            let params = (paramsOrCallback ||
-                {});
-            let options = (optionsOrCallback || {});
-            if (typeof paramsOrCallback === 'function') {
-                callback = paramsOrCallback;
-                params =
-                    {};
-                options = {};
-            }
-            if (typeof optionsOrCallback === 'function') {
-                callback = optionsOrCallback;
-                options = {};
-            }
-            const rootUrl = options.rootUrl || 'https://beyondcorp.googleapis.com/';
-            const parameters = {
-                options: Object.assign({
-                    url: (rootUrl + '/v1alpha/{+appConnector}:reportStatus').replace(/([^:]\/)\/+/g, '$1'),
-                    method: 'POST',
-                    apiVersion: '',
-                }, options),
-                params,
-                requiredParams: ['appConnector'],
-                pathParams: ['appConnector'],
-                context: this.context,
-            };
-            if (callback) {
-                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
-            }
-            else {
-                return (0, googleapis_common_1.createAPIRequest)(parameters);
-            }
-        }
         resolveInstanceConfig(paramsOrCallback, optionsOrCallback, callback) {
             let params = (paramsOrCallback ||
                 {});
@@ -181070,38 +181801,6 @@ var beyondcorp_v1alpha;
         context;
         constructor(context) {
             this.context = context;
-        }
-        create(paramsOrCallback, optionsOrCallback, callback) {
-            let params = (paramsOrCallback ||
-                {});
-            let options = (optionsOrCallback || {});
-            if (typeof paramsOrCallback === 'function') {
-                callback = paramsOrCallback;
-                params = {};
-                options = {};
-            }
-            if (typeof optionsOrCallback === 'function') {
-                callback = optionsOrCallback;
-                options = {};
-            }
-            const rootUrl = options.rootUrl || 'https://beyondcorp.googleapis.com/';
-            const parameters = {
-                options: Object.assign({
-                    url: (rootUrl + '/v1alpha/{+parent}/appGateways').replace(/([^:]\/)\/+/g, '$1'),
-                    method: 'POST',
-                    apiVersion: '',
-                }, options),
-                params,
-                requiredParams: ['parent'],
-                pathParams: ['parent'],
-                context: this.context,
-            };
-            if (callback) {
-                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
-            }
-            else {
-                return (0, googleapis_common_1.createAPIRequest)(parameters);
-            }
         }
         delete(paramsOrCallback, optionsOrCallback, callback) {
             let params = (paramsOrCallback ||
@@ -181517,38 +182216,6 @@ var beyondcorp_v1alpha;
         constructor(context) {
             this.context = context;
         }
-        create(paramsOrCallback, optionsOrCallback, callback) {
-            let params = (paramsOrCallback ||
-                {});
-            let options = (optionsOrCallback || {});
-            if (typeof paramsOrCallback === 'function') {
-                callback = paramsOrCallback;
-                params = {};
-                options = {};
-            }
-            if (typeof optionsOrCallback === 'function') {
-                callback = optionsOrCallback;
-                options = {};
-            }
-            const rootUrl = options.rootUrl || 'https://beyondcorp.googleapis.com/';
-            const parameters = {
-                options: Object.assign({
-                    url: (rootUrl + '/v1alpha/{+parent}/connections').replace(/([^:]\/)\/+/g, '$1'),
-                    method: 'POST',
-                    apiVersion: '',
-                }, options),
-                params,
-                requiredParams: ['parent'],
-                pathParams: ['parent'],
-                context: this.context,
-            };
-            if (callback) {
-                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
-            }
-            else {
-                return (0, googleapis_common_1.createAPIRequest)(parameters);
-            }
-        }
         delete(paramsOrCallback, optionsOrCallback, callback) {
             let params = (paramsOrCallback ||
                 {});
@@ -181669,38 +182336,6 @@ var beyondcorp_v1alpha;
                 params,
                 requiredParams: ['parent'],
                 pathParams: ['parent'],
-                context: this.context,
-            };
-            if (callback) {
-                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
-            }
-            else {
-                return (0, googleapis_common_1.createAPIRequest)(parameters);
-            }
-        }
-        patch(paramsOrCallback, optionsOrCallback, callback) {
-            let params = (paramsOrCallback ||
-                {});
-            let options = (optionsOrCallback || {});
-            if (typeof paramsOrCallback === 'function') {
-                callback = paramsOrCallback;
-                params = {};
-                options = {};
-            }
-            if (typeof optionsOrCallback === 'function') {
-                callback = optionsOrCallback;
-                options = {};
-            }
-            const rootUrl = options.rootUrl || 'https://beyondcorp.googleapis.com/';
-            const parameters = {
-                options: Object.assign({
-                    url: (rootUrl + '/v1alpha/{+name}').replace(/([^:]\/)\/+/g, '$1'),
-                    method: 'PATCH',
-                    apiVersion: '',
-                }, options),
-                params,
-                requiredParams: ['name'],
-                pathParams: ['name'],
                 context: this.context,
             };
             if (callback) {
@@ -181782,38 +182417,6 @@ var beyondcorp_v1alpha;
         constructor(context) {
             this.context = context;
         }
-        create(paramsOrCallback, optionsOrCallback, callback) {
-            let params = (paramsOrCallback ||
-                {});
-            let options = (optionsOrCallback || {});
-            if (typeof paramsOrCallback === 'function') {
-                callback = paramsOrCallback;
-                params = {};
-                options = {};
-            }
-            if (typeof optionsOrCallback === 'function') {
-                callback = optionsOrCallback;
-                options = {};
-            }
-            const rootUrl = options.rootUrl || 'https://beyondcorp.googleapis.com/';
-            const parameters = {
-                options: Object.assign({
-                    url: (rootUrl + '/v1alpha/{+parent}/connectors').replace(/([^:]\/)\/+/g, '$1'),
-                    method: 'POST',
-                    apiVersion: '',
-                }, options),
-                params,
-                requiredParams: ['parent'],
-                pathParams: ['parent'],
-                context: this.context,
-            };
-            if (callback) {
-                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
-            }
-            else {
-                return (0, googleapis_common_1.createAPIRequest)(parameters);
-            }
-        }
         delete(paramsOrCallback, optionsOrCallback, callback) {
             let params = (paramsOrCallback ||
                 {});
@@ -181934,71 +182537,6 @@ var beyondcorp_v1alpha;
                 params,
                 requiredParams: ['parent'],
                 pathParams: ['parent'],
-                context: this.context,
-            };
-            if (callback) {
-                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
-            }
-            else {
-                return (0, googleapis_common_1.createAPIRequest)(parameters);
-            }
-        }
-        patch(paramsOrCallback, optionsOrCallback, callback) {
-            let params = (paramsOrCallback ||
-                {});
-            let options = (optionsOrCallback || {});
-            if (typeof paramsOrCallback === 'function') {
-                callback = paramsOrCallback;
-                params = {};
-                options = {};
-            }
-            if (typeof optionsOrCallback === 'function') {
-                callback = optionsOrCallback;
-                options = {};
-            }
-            const rootUrl = options.rootUrl || 'https://beyondcorp.googleapis.com/';
-            const parameters = {
-                options: Object.assign({
-                    url: (rootUrl + '/v1alpha/{+name}').replace(/([^:]\/)\/+/g, '$1'),
-                    method: 'PATCH',
-                    apiVersion: '',
-                }, options),
-                params,
-                requiredParams: ['name'],
-                pathParams: ['name'],
-                context: this.context,
-            };
-            if (callback) {
-                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
-            }
-            else {
-                return (0, googleapis_common_1.createAPIRequest)(parameters);
-            }
-        }
-        reportStatus(paramsOrCallback, optionsOrCallback, callback) {
-            let params = (paramsOrCallback ||
-                {});
-            let options = (optionsOrCallback || {});
-            if (typeof paramsOrCallback === 'function') {
-                callback = paramsOrCallback;
-                params =
-                    {};
-                options = {};
-            }
-            if (typeof optionsOrCallback === 'function') {
-                callback = optionsOrCallback;
-                options = {};
-            }
-            const rootUrl = options.rootUrl || 'https://beyondcorp.googleapis.com/';
-            const parameters = {
-                options: Object.assign({
-                    url: (rootUrl + '/v1alpha/{+connector}:reportStatus').replace(/([^:]\/)\/+/g, '$1'),
-                    method: 'POST',
-                    apiVersion: '',
-                }, options),
-                params,
-                requiredParams: ['connector'],
-                pathParams: ['connector'],
                 context: this.context,
             };
             if (callback) {
@@ -199618,7 +200156,7 @@ var businessprofileperformance_v1;
     /**
      * Business Profile Performance API
      *
-     * The Business Profile Performance API allows merchants to fetch performance reports about their business profile on Google. Note - If you have a quota of 0 after enabling the API, please request for GBP API access.
+     * The Business Profile Performance API allows merchants to fetch performance reports about their business profile on Google. Note: If you have a quota of 0 after enabling the API, please request GBP API access at https://developers.google.com/my-business/content/prereqs#request-access.
      *
      * @example
      * ```js
@@ -251950,10 +252488,12 @@ var cloudresourcemanager_v3;
     cloudresourcemanager_v3.Resource$Effectivetags = Resource$Effectivetags;
     class Resource$Folders {
         context;
+        boundaries;
         capabilities;
         capabilityConfigs;
         constructor(context) {
             this.context = context;
+            this.boundaries = new Resource$Folders$Boundaries(this.context);
             this.capabilities = new Resource$Folders$Capabilities(this.context);
             this.capabilityConfigs = new Resource$Folders$Capabilityconfigs(this.context);
         }
@@ -252021,6 +252561,38 @@ var cloudresourcemanager_v3;
         }
         get(paramsOrCallback, optionsOrCallback, callback) {
             let params = (paramsOrCallback || {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://cloudresourcemanager.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v3/{+name}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['name'],
+                pathParams: ['name'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        getBoundaryConfig(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
             let options = (optionsOrCallback || {});
             if (typeof paramsOrCallback === 'function') {
                 callback = paramsOrCallback;
@@ -252301,8 +252873,207 @@ var cloudresourcemanager_v3;
                 return (0, googleapis_common_1.createAPIRequest)(parameters);
             }
         }
+        updateBoundaryConfig(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://cloudresourcemanager.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v3/{+name}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'PATCH',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['name'],
+                pathParams: ['name'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
     }
     cloudresourcemanager_v3.Resource$Folders = Resource$Folders;
+    class Resource$Folders$Boundaries {
+        context;
+        constructor(context) {
+            this.context = context;
+        }
+        create(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://cloudresourcemanager.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v3/{+parent}/boundaries').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'POST',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['parent'],
+                pathParams: ['parent'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        delete(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://cloudresourcemanager.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v3/{+name}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'DELETE',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['name'],
+                pathParams: ['name'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        get(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://cloudresourcemanager.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v3/{+name}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['name'],
+                pathParams: ['name'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        list(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://cloudresourcemanager.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v3/{+parent}/boundaries').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['parent'],
+                pathParams: ['parent'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        patch(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://cloudresourcemanager.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v3/{+name}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'PATCH',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['name'],
+                pathParams: ['name'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+    }
+    cloudresourcemanager_v3.Resource$Folders$Boundaries = Resource$Folders$Boundaries;
     class Resource$Folders$Capabilities {
         context;
         constructor(context) {
@@ -252835,12 +253606,46 @@ var cloudresourcemanager_v3;
     cloudresourcemanager_v3.Resource$Operations = Resource$Operations;
     class Resource$Organizations {
         context;
+        boundaries;
         capabilityConfigs;
         constructor(context) {
             this.context = context;
+            this.boundaries = new Resource$Organizations$Boundaries(this.context);
             this.capabilityConfigs = new Resource$Organizations$Capabilityconfigs(this.context);
         }
         get(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://cloudresourcemanager.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v3/{+name}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['name'],
+                pathParams: ['name'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        getBoundaryConfig(paramsOrCallback, optionsOrCallback, callback) {
             let params = (paramsOrCallback ||
                 {});
             let options = (optionsOrCallback || {});
@@ -253000,8 +253805,207 @@ var cloudresourcemanager_v3;
                 return (0, googleapis_common_1.createAPIRequest)(parameters);
             }
         }
+        updateBoundaryConfig(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://cloudresourcemanager.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v3/{+name}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'PATCH',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['name'],
+                pathParams: ['name'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
     }
     cloudresourcemanager_v3.Resource$Organizations = Resource$Organizations;
+    class Resource$Organizations$Boundaries {
+        context;
+        constructor(context) {
+            this.context = context;
+        }
+        create(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://cloudresourcemanager.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v3/{+parent}/boundaries').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'POST',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['parent'],
+                pathParams: ['parent'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        delete(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://cloudresourcemanager.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v3/{+name}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'DELETE',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['name'],
+                pathParams: ['name'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        get(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://cloudresourcemanager.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v3/{+name}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['name'],
+                pathParams: ['name'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        list(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://cloudresourcemanager.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v3/{+parent}/boundaries').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['parent'],
+                pathParams: ['parent'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        patch(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://cloudresourcemanager.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v3/{+name}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'PATCH',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['name'],
+                pathParams: ['name'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+    }
+    cloudresourcemanager_v3.Resource$Organizations$Boundaries = Resource$Organizations$Boundaries;
     class Resource$Organizations$Capabilityconfigs {
         context;
         constructor(context) {
@@ -345900,9 +346904,12 @@ var compute_preview;
         externalVpnGateways;
         firewallPolicies;
         firewalls;
+        folderGlobalVmExtensionPolicies;
+        folderZoneVmExtensionPolicies;
         forwardingRules;
         futureReservations;
         globalAddresses;
+        globalFolderOperations;
         globalForwardingRules;
         globalFrontendSettings;
         globalNetworkEndpointGroups;
@@ -345946,7 +346953,9 @@ var compute_preview;
         nodeGroups;
         nodeTemplates;
         nodeTypes;
+        organizationGlobalVmExtensionPolicies;
         organizationSecurityPolicies;
+        organizationZoneVmExtensionPolicies;
         packetMirrorings;
         previewFeatures;
         projects;
@@ -346017,7 +347026,9 @@ var compute_preview;
         vpnGateways;
         vpnTunnels;
         wireGroups;
+        zoneFolderOperations;
         zoneOperations;
+        zoneOrganizationOperations;
         zones;
         zoneVmExtensionPolicies;
         constructor(options, google) {
@@ -346041,9 +347052,14 @@ var compute_preview;
             this.externalVpnGateways = new Resource$Externalvpngateways(this.context);
             this.firewallPolicies = new Resource$Firewallpolicies(this.context);
             this.firewalls = new Resource$Firewalls(this.context);
+            this.folderGlobalVmExtensionPolicies =
+                new Resource$Folderglobalvmextensionpolicies(this.context);
+            this.folderZoneVmExtensionPolicies =
+                new Resource$Folderzonevmextensionpolicies(this.context);
             this.forwardingRules = new Resource$Forwardingrules(this.context);
             this.futureReservations = new Resource$Futurereservations(this.context);
             this.globalAddresses = new Resource$Globaladdresses(this.context);
+            this.globalFolderOperations = new Resource$Globalfolderoperations(this.context);
             this.globalForwardingRules = new Resource$Globalforwardingrules(this.context);
             this.globalFrontendSettings = new Resource$Globalfrontendsettings(this.context);
             this.globalNetworkEndpointGroups =
@@ -346094,8 +347110,12 @@ var compute_preview;
             this.nodeGroups = new Resource$Nodegroups(this.context);
             this.nodeTemplates = new Resource$Nodetemplates(this.context);
             this.nodeTypes = new Resource$Nodetypes(this.context);
+            this.organizationGlobalVmExtensionPolicies =
+                new Resource$Organizationglobalvmextensionpolicies(this.context);
             this.organizationSecurityPolicies =
                 new Resource$Organizationsecuritypolicies(this.context);
+            this.organizationZoneVmExtensionPolicies =
+                new Resource$Organizationzonevmextensionpolicies(this.context);
             this.packetMirrorings = new Resource$Packetmirrorings(this.context);
             this.previewFeatures = new Resource$Previewfeatures(this.context);
             this.projects = new Resource$Projects(this.context);
@@ -346174,7 +347194,9 @@ var compute_preview;
             this.vpnGateways = new Resource$Vpngateways(this.context);
             this.vpnTunnels = new Resource$Vpntunnels(this.context);
             this.wireGroups = new Resource$Wiregroups(this.context);
+            this.zoneFolderOperations = new Resource$Zonefolderoperations(this.context);
             this.zoneOperations = new Resource$Zoneoperations(this.context);
+            this.zoneOrganizationOperations = new Resource$Zoneorganizationoperations(this.context);
             this.zones = new Resource$Zones(this.context);
             this.zoneVmExtensionPolicies = new Resource$Zonevmextensionpolicies(this.context);
         }
@@ -350275,6 +351297,513 @@ var compute_preview;
         }
     }
     compute_preview.Resource$Firewalls = Resource$Firewalls;
+    class Resource$Folderglobalvmextensionpolicies {
+        context;
+        constructor(context) {
+            this.context = context;
+        }
+        aggregatedList(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params =
+                    {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://compute.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/compute/v1/{+folder}/aggregated/vmExtensionPolicies').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '2026-10-01-preview',
+                }, options),
+                params,
+                requiredParams: ['folder'],
+                pathParams: ['folder'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        delete(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://compute.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl +
+                        '/compute/v1/{+folder}/global/vmExtensionPolicies/{globalVmExtensionPolicy}/delete').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'POST',
+                    apiVersion: '2026-10-01-preview',
+                }, options),
+                params,
+                requiredParams: ['folder', 'globalVmExtensionPolicy'],
+                pathParams: ['folder', 'globalVmExtensionPolicy'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        get(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://compute.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl +
+                        '/compute/v1/{+folder}/global/vmExtensionPolicies/{globalVmExtensionPolicy}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '2026-10-01-preview',
+                }, options),
+                params,
+                requiredParams: ['folder', 'globalVmExtensionPolicy'],
+                pathParams: ['folder', 'globalVmExtensionPolicy'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        getVmExtension(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params =
+                    {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://compute.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl +
+                        '/compute/v1/{+folder}/global/vmExtensions/{extensionName}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '2026-10-01-preview',
+                }, options),
+                params,
+                requiredParams: ['folder', 'extensionName'],
+                pathParams: ['extensionName', 'folder'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        insert(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://compute.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/compute/v1/{+folder}/global/vmExtensionPolicies').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'POST',
+                    apiVersion: '2026-10-01-preview',
+                }, options),
+                params,
+                requiredParams: ['folder'],
+                pathParams: ['folder'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        list(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://compute.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/compute/v1/{+folder}/global/vmExtensionPolicies').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '2026-10-01-preview',
+                }, options),
+                params,
+                requiredParams: ['folder'],
+                pathParams: ['folder'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        listVmExtensions(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params =
+                    {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://compute.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/compute/v1/{+folder}/global/vmExtensions').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '2026-10-01-preview',
+                }, options),
+                params,
+                requiredParams: ['folder'],
+                pathParams: ['folder'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        update(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://compute.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl +
+                        '/compute/v1/{+folder}/global/vmExtensionPolicies/{globalVmExtensionPolicy}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'PATCH',
+                    apiVersion: '2026-10-01-preview',
+                }, options),
+                params,
+                requiredParams: ['folder', 'globalVmExtensionPolicy'],
+                pathParams: ['folder', 'globalVmExtensionPolicy'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+    }
+    compute_preview.Resource$Folderglobalvmextensionpolicies = Resource$Folderglobalvmextensionpolicies;
+    class Resource$Folderzonevmextensionpolicies {
+        context;
+        constructor(context) {
+            this.context = context;
+        }
+        delete(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://compute.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl +
+                        '/compute/v1/{+folder}/zones/{zone}/vmExtensionPolicies/{vmExtensionPolicy}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'DELETE',
+                    apiVersion: '2026-10-01-preview',
+                }, options),
+                params,
+                requiredParams: ['folder', 'zone', 'vmExtensionPolicy'],
+                pathParams: ['folder', 'vmExtensionPolicy', 'zone'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        get(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://compute.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl +
+                        '/compute/v1/{+folder}/zones/{zone}/vmExtensionPolicies/{vmExtensionPolicy}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '2026-10-01-preview',
+                }, options),
+                params,
+                requiredParams: ['folder', 'zone', 'vmExtensionPolicy'],
+                pathParams: ['folder', 'vmExtensionPolicy', 'zone'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        getVmExtension(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params =
+                    {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://compute.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl +
+                        '/compute/v1/{+folder}/zones/{zone}/vmExtensions/{extensionName}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '2026-10-01-preview',
+                }, options),
+                params,
+                requiredParams: ['folder', 'zone', 'extensionName'],
+                pathParams: ['extensionName', 'folder', 'zone'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        insert(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://compute.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/compute/v1/{+folder}/zones/{zone}/vmExtensionPolicies').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'POST',
+                    apiVersion: '2026-10-01-preview',
+                }, options),
+                params,
+                requiredParams: ['folder', 'zone'],
+                pathParams: ['folder', 'zone'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        list(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://compute.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/compute/v1/{+folder}/zones/{zone}/vmExtensionPolicies').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '2026-10-01-preview',
+                }, options),
+                params,
+                requiredParams: ['folder', 'zone'],
+                pathParams: ['folder', 'zone'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        listVmExtensions(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params =
+                    {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://compute.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/compute/v1/{+folder}/zones/{zone}/vmExtensions').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '2026-10-01-preview',
+                }, options),
+                params,
+                requiredParams: ['folder', 'zone'],
+                pathParams: ['folder', 'zone'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        update(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://compute.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl +
+                        '/compute/v1/{+folder}/zones/{zone}/vmExtensionPolicies/{vmExtensionPolicy}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'PATCH',
+                    apiVersion: '2026-10-01-preview',
+                }, options),
+                params,
+                requiredParams: ['folder', 'zone', 'vmExtensionPolicy'],
+                pathParams: ['folder', 'vmExtensionPolicy', 'zone'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+    }
+    compute_preview.Resource$Folderzonevmextensionpolicies = Resource$Folderzonevmextensionpolicies;
     class Resource$Forwardingrules {
         context;
         constructor(context) {
@@ -351020,6 +352549,77 @@ var compute_preview;
         }
     }
     compute_preview.Resource$Globaladdresses = Resource$Globaladdresses;
+    class Resource$Globalfolderoperations {
+        context;
+        constructor(context) {
+            this.context = context;
+        }
+        get(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://compute.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/compute/v1/{+folder}/global/operations/{operation}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '2026-10-01-preview',
+                }, options),
+                params,
+                requiredParams: ['folder', 'operation'],
+                pathParams: ['folder', 'operation'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        list(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://compute.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/compute/v1/{+folder}/global/operations').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '2026-10-01-preview',
+                }, options),
+                params,
+                requiredParams: ['folder'],
+                pathParams: ['folder'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+    }
+    compute_preview.Resource$Globalfolderoperations = Resource$Globalfolderoperations;
     class Resource$Globalforwardingrules {
         context;
         constructor(context) {
@@ -352119,6 +353719,39 @@ var compute_preview;
                 return (0, googleapis_common_1.createAPIRequest)(parameters);
             }
         }
+        getVmExtension(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://compute.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl +
+                        '/compute/v1/projects/{project}/global/vmExtensions/{extensionName}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '2026-10-01-preview',
+                }, options),
+                params,
+                requiredParams: ['project', 'extensionName'],
+                pathParams: ['extensionName', 'project'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
         insert(paramsOrCallback, optionsOrCallback, callback) {
             let params = (paramsOrCallback ||
                 {});
@@ -352170,6 +353803,39 @@ var compute_preview;
                 options: Object.assign({
                     url: (rootUrl +
                         '/compute/v1/projects/{project}/global/vmExtensionPolicies').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '2026-10-01-preview',
+                }, options),
+                params,
+                requiredParams: ['project'],
+                pathParams: ['project'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        listVmExtensions(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params =
+                    {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://compute.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/compute/v1/projects/{project}/global/vmExtensions').replace(/([^:]\/)\/+/g, '$1'),
                     method: 'GET',
                     apiVersion: '2026-10-01-preview',
                 }, options),
@@ -356635,39 +358301,6 @@ var compute_preview;
                 params,
                 requiredParams: ['project', 'zone', 'resource'],
                 pathParams: ['project', 'resource', 'zone'],
-                context: this.context,
-            };
-            if (callback) {
-                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
-            }
-            else {
-                return (0, googleapis_common_1.createAPIRequest)(parameters);
-            }
-        }
-        troubleshoot(paramsOrCallback, optionsOrCallback, callback) {
-            let params = (paramsOrCallback ||
-                {});
-            let options = (optionsOrCallback || {});
-            if (typeof paramsOrCallback === 'function') {
-                callback = paramsOrCallback;
-                params = {};
-                options = {};
-            }
-            if (typeof optionsOrCallback === 'function') {
-                callback = optionsOrCallback;
-                options = {};
-            }
-            const rootUrl = options.rootUrl || 'https://compute.googleapis.com/';
-            const parameters = {
-                options: Object.assign({
-                    url: (rootUrl +
-                        '/compute/v1/projects/{project}/zones/{zone}/instances/{instance}/troubleshoot').replace(/([^:]\/)\/+/g, '$1'),
-                    method: 'POST',
-                    apiVersion: '2026-10-01-preview',
-                }, options),
-                params,
-                requiredParams: ['project', 'zone', 'instance'],
-                pathParams: ['instance', 'project', 'zone'],
                 context: this.context,
             };
             if (callback) {
@@ -361861,6 +363494,39 @@ var compute_preview;
                 return (0, googleapis_common_1.createAPIRequest)(parameters);
             }
         }
+        updateNetworkProfile(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://compute.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl +
+                        '/compute/v1/projects/{project}/global/networks/{network}/updateNetworkProfile').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'POST',
+                    apiVersion: '2026-10-01-preview',
+                }, options),
+                params,
+                requiredParams: ['project', 'network'],
+                pathParams: ['network', 'project'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
         updatePeering(paramsOrCallback, optionsOrCallback, callback) {
             let params = (paramsOrCallback ||
                 {});
@@ -362765,6 +364431,282 @@ var compute_preview;
         }
     }
     compute_preview.Resource$Nodetypes = Resource$Nodetypes;
+    class Resource$Organizationglobalvmextensionpolicies {
+        context;
+        constructor(context) {
+            this.context = context;
+        }
+        aggregatedList(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params =
+                    {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://compute.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl +
+                        '/compute/v1/{+organization}/aggregated/vmExtensionPolicies').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '2026-10-01-preview',
+                }, options),
+                params,
+                requiredParams: ['organization'],
+                pathParams: ['organization'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        delete(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params =
+                    {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://compute.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl +
+                        '/compute/v1/{+organization}/global/vmExtensionPolicies/{globalVmExtensionPolicy}/delete').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'POST',
+                    apiVersion: '2026-10-01-preview',
+                }, options),
+                params,
+                requiredParams: ['organization', 'globalVmExtensionPolicy'],
+                pathParams: ['globalVmExtensionPolicy', 'organization'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        get(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params =
+                    {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://compute.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl +
+                        '/compute/v1/{+organization}/global/vmExtensionPolicies/{globalVmExtensionPolicy}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '2026-10-01-preview',
+                }, options),
+                params,
+                requiredParams: ['organization', 'globalVmExtensionPolicy'],
+                pathParams: ['globalVmExtensionPolicy', 'organization'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        getVmExtension(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params =
+                    {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://compute.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl +
+                        '/compute/v1/{+organization}/global/vmExtensions/{extensionName}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '2026-10-01-preview',
+                }, options),
+                params,
+                requiredParams: ['organization', 'extensionName'],
+                pathParams: ['extensionName', 'organization'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        insert(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params =
+                    {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://compute.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/compute/v1/{+organization}/global/vmExtensionPolicies').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'POST',
+                    apiVersion: '2026-10-01-preview',
+                }, options),
+                params,
+                requiredParams: ['organization'],
+                pathParams: ['organization'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        list(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params =
+                    {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://compute.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/compute/v1/{+organization}/global/vmExtensionPolicies').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '2026-10-01-preview',
+                }, options),
+                params,
+                requiredParams: ['organization'],
+                pathParams: ['organization'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        listVmExtensions(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params =
+                    {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://compute.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/compute/v1/{+organization}/global/vmExtensions').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '2026-10-01-preview',
+                }, options),
+                params,
+                requiredParams: ['organization'],
+                pathParams: ['organization'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        update(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params =
+                    {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://compute.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl +
+                        '/compute/v1/{+organization}/global/vmExtensionPolicies/{globalVmExtensionPolicy}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'PATCH',
+                    apiVersion: '2026-10-01-preview',
+                }, options),
+                params,
+                requiredParams: ['organization', 'globalVmExtensionPolicy'],
+                pathParams: ['globalVmExtensionPolicy', 'organization'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+    }
+    compute_preview.Resource$Organizationglobalvmextensionpolicies = Resource$Organizationglobalvmextensionpolicies;
     class Resource$Organizationsecuritypolicies {
         context;
         constructor(context) {
@@ -363303,6 +365245,248 @@ var compute_preview;
         }
     }
     compute_preview.Resource$Organizationsecuritypolicies = Resource$Organizationsecuritypolicies;
+    class Resource$Organizationzonevmextensionpolicies {
+        context;
+        constructor(context) {
+            this.context = context;
+        }
+        delete(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params =
+                    {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://compute.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl +
+                        '/compute/v1/{+organization}/zones/{zone}/vmExtensionPolicies/{vmExtensionPolicy}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'DELETE',
+                    apiVersion: '2026-10-01-preview',
+                }, options),
+                params,
+                requiredParams: ['organization', 'zone', 'vmExtensionPolicy'],
+                pathParams: ['organization', 'vmExtensionPolicy', 'zone'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        get(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://compute.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl +
+                        '/compute/v1/{+organization}/zones/{zone}/vmExtensionPolicies/{vmExtensionPolicy}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '2026-10-01-preview',
+                }, options),
+                params,
+                requiredParams: ['organization', 'zone', 'vmExtensionPolicy'],
+                pathParams: ['organization', 'vmExtensionPolicy', 'zone'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        getVmExtension(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params =
+                    {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://compute.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl +
+                        '/compute/v1/{+organization}/zones/{zone}/vmExtensions/{extensionName}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '2026-10-01-preview',
+                }, options),
+                params,
+                requiredParams: ['organization', 'zone', 'extensionName'],
+                pathParams: ['extensionName', 'organization', 'zone'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        insert(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params =
+                    {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://compute.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl +
+                        '/compute/v1/{+organization}/zones/{zone}/vmExtensionPolicies').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'POST',
+                    apiVersion: '2026-10-01-preview',
+                }, options),
+                params,
+                requiredParams: ['organization', 'zone'],
+                pathParams: ['organization', 'zone'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        list(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://compute.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl +
+                        '/compute/v1/{+organization}/zones/{zone}/vmExtensionPolicies').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '2026-10-01-preview',
+                }, options),
+                params,
+                requiredParams: ['organization', 'zone'],
+                pathParams: ['organization', 'zone'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        listVmExtensions(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params =
+                    {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://compute.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/compute/v1/{+organization}/zones/{zone}/vmExtensions').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '2026-10-01-preview',
+                }, options),
+                params,
+                requiredParams: ['organization', 'zone'],
+                pathParams: ['organization', 'zone'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        update(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params =
+                    {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://compute.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl +
+                        '/compute/v1/{+organization}/zones/{zone}/vmExtensionPolicies/{vmExtensionPolicy}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'PATCH',
+                    apiVersion: '2026-10-01-preview',
+                }, options),
+                params,
+                requiredParams: ['organization', 'zone', 'vmExtensionPolicy'],
+                pathParams: ['organization', 'vmExtensionPolicy', 'zone'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+    }
+    compute_preview.Resource$Organizationzonevmextensionpolicies = Resource$Organizationzonevmextensionpolicies;
     class Resource$Packetmirrorings {
         context;
         constructor(context) {
@@ -371564,6 +373748,39 @@ var compute_preview;
                 return (0, googleapis_common_1.createAPIRequest)(parameters);
             }
         }
+        fetchEncryptionKey(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://compute.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl +
+                        '/compute/v1/projects/{project}/regions/{region}/sslCertificates/encryptionKey').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '2026-10-01-preview',
+                }, options),
+                params,
+                requiredParams: ['project', 'region'],
+                pathParams: ['project', 'region'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
         get(paramsOrCallback, optionsOrCallback, callback) {
             let params = (paramsOrCallback ||
                 {});
@@ -376509,6 +378726,39 @@ var compute_preview;
                 return (0, googleapis_common_1.createAPIRequest)(parameters);
             }
         }
+        fetchEncryptionKey(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://compute.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl +
+                        '/compute/v1/projects/{project}/global/sslCertificates/encryptionKey').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '2026-10-01-preview',
+                }, options),
+                params,
+                requiredParams: ['project'],
+                pathParams: ['project'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
         get(paramsOrCallback, optionsOrCallback, callback) {
             let params = (paramsOrCallback ||
                 {});
@@ -380904,6 +383154,78 @@ var compute_preview;
         }
     }
     compute_preview.Resource$Wiregroups = Resource$Wiregroups;
+    class Resource$Zonefolderoperations {
+        context;
+        constructor(context) {
+            this.context = context;
+        }
+        get(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://compute.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl +
+                        '/compute/v1/{+folder}/zones/{zone}/operations/{operation}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '2026-10-01-preview',
+                }, options),
+                params,
+                requiredParams: ['folder', 'zone', 'operation'],
+                pathParams: ['folder', 'operation', 'zone'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        list(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://compute.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/compute/v1/{+folder}/zones/{zone}/operations').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '2026-10-01-preview',
+                }, options),
+                params,
+                requiredParams: ['folder', 'zone'],
+                pathParams: ['folder', 'zone'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+    }
+    compute_preview.Resource$Zonefolderoperations = Resource$Zonefolderoperations;
     class Resource$Zoneoperations {
         context;
         constructor(context) {
@@ -381042,6 +383364,78 @@ var compute_preview;
         }
     }
     compute_preview.Resource$Zoneoperations = Resource$Zoneoperations;
+    class Resource$Zoneorganizationoperations {
+        context;
+        constructor(context) {
+            this.context = context;
+        }
+        get(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://compute.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl +
+                        '/compute/v1/{+organization}/zones/{zone}/operations/{operation}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '2026-10-01-preview',
+                }, options),
+                params,
+                requiredParams: ['organization', 'zone', 'operation'],
+                pathParams: ['operation', 'organization', 'zone'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        list(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://compute.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/compute/v1/{+organization}/zones/{zone}/operations').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '2026-10-01-preview',
+                }, options),
+                params,
+                requiredParams: ['organization', 'zone'],
+                pathParams: ['organization', 'zone'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+    }
+    compute_preview.Resource$Zoneorganizationoperations = Resource$Zoneorganizationoperations;
     class Resource$Zones {
         context;
         constructor(context) {
@@ -381182,6 +383576,39 @@ var compute_preview;
                 return (0, googleapis_common_1.createAPIRequest)(parameters);
             }
         }
+        getVmExtension(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://compute.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl +
+                        '/compute/v1/projects/{project}/zones/{zone}/vmExtensions/{extensionName}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '2026-10-01-preview',
+                }, options),
+                params,
+                requiredParams: ['project', 'zone', 'extensionName'],
+                pathParams: ['extensionName', 'project', 'zone'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
         insert(paramsOrCallback, optionsOrCallback, callback) {
             let params = (paramsOrCallback ||
                 {});
@@ -381233,6 +383660,39 @@ var compute_preview;
                 options: Object.assign({
                     url: (rootUrl +
                         '/compute/v1/projects/{project}/zones/{zone}/vmExtensionPolicies').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '2026-10-01-preview',
+                }, options),
+                params,
+                requiredParams: ['project', 'zone'],
+                pathParams: ['project', 'zone'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        listVmExtensions(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://compute.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl +
+                        '/compute/v1/projects/{project}/zones/{zone}/vmExtensions').replace(/([^:]\/)\/+/g, '$1'),
                     method: 'GET',
                     apiVersion: '2026-10-01-preview',
                 }, options),
@@ -443706,6 +446166,38 @@ var curationpartners_v1;
                 return (0, googleapis_common_1.createAPIRequest)(parameters);
             }
         }
+        search(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://curationpartners.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1/mediaPlanners:search').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: [],
+                pathParams: [],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
     }
     curationpartners_v1.Resource$Mediaplanners = Resource$Mediaplanners;
 })(curationpartners_v1 || (exports.curationpartners_v1 = curationpartners_v1 = {}));
@@ -452239,6 +454731,39 @@ var dataform_v1;
                 return (0, googleapis_common_1.createAPIRequest)(parameters);
             }
         }
+        createLongRunning(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params =
+                    {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://dataform.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1/{+parent}/compilationResults:createLongRunning').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'POST',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['parent'],
+                pathParams: ['parent'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
         get(paramsOrCallback, optionsOrCallback, callback) {
             let params = (paramsOrCallback ||
                 {});
@@ -455286,6 +457811,40 @@ var dataform_v1beta1;
             const parameters = {
                 options: Object.assign({
                     url: (rootUrl + '/v1beta1/{+parent}/compilationResults').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'POST',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['parent'],
+                pathParams: ['parent'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        createLongRunning(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params =
+                    {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://dataform.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl +
+                        '/v1beta1/{+parent}/compilationResults:createLongRunning').replace(/([^:]\/)\/+/g, '$1'),
                     method: 'POST',
                     apiVersion: '',
                 }, options),
@@ -484658,7 +487217,7 @@ var deepreview_v1;
     /**
      * Deep Review API
      *
-     * Deep Review API for automated conference-quality scientific paper reviews.
+     * Deep Review API for automated, in-depth document reviews.
      *
      * @example
      * ```js
@@ -484671,6 +487230,7 @@ var deepreview_v1;
         documents;
         media;
         operations;
+        v1;
         constructor(options, google) {
             this.context = {
                 _options: options || {},
@@ -484679,6 +487239,7 @@ var deepreview_v1;
             this.documents = new Resource$Documents(this.context);
             this.media = new Resource$Media(this.context);
             this.operations = new Resource$Operations(this.context);
+            this.v1 = new Resource$V1(this.context);
         }
     }
     deepreview_v1.Deepreview = Deepreview;
@@ -484711,6 +487272,38 @@ var deepreview_v1;
                 params,
                 requiredParams: ['name'],
                 pathParams: ['name'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        estimateReviewCost(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://deepreview.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1/{+document}:estimateReviewCost').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'POST',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['document'],
+                pathParams: ['document'],
                 context: this.context,
             };
             if (callback) {
@@ -484964,101 +487557,6 @@ var deepreview_v1;
             this.context = context;
             this.documents = new Resource$Operations$Documents(this.context);
         }
-        cancel(paramsOrCallback, optionsOrCallback, callback) {
-            let params = (paramsOrCallback ||
-                {});
-            let options = (optionsOrCallback || {});
-            if (typeof paramsOrCallback === 'function') {
-                callback = paramsOrCallback;
-                params = {};
-                options = {};
-            }
-            if (typeof optionsOrCallback === 'function') {
-                callback = optionsOrCallback;
-                options = {};
-            }
-            const rootUrl = options.rootUrl || 'https://deepreview.googleapis.com/';
-            const parameters = {
-                options: Object.assign({
-                    url: (rootUrl + '/v1/{+name}:cancel').replace(/([^:]\/)\/+/g, '$1'),
-                    method: 'POST',
-                    apiVersion: '',
-                }, options),
-                params,
-                requiredParams: ['name'],
-                pathParams: ['name'],
-                context: this.context,
-            };
-            if (callback) {
-                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
-            }
-            else {
-                return (0, googleapis_common_1.createAPIRequest)(parameters);
-            }
-        }
-        delete(paramsOrCallback, optionsOrCallback, callback) {
-            let params = (paramsOrCallback ||
-                {});
-            let options = (optionsOrCallback || {});
-            if (typeof paramsOrCallback === 'function') {
-                callback = paramsOrCallback;
-                params = {};
-                options = {};
-            }
-            if (typeof optionsOrCallback === 'function') {
-                callback = optionsOrCallback;
-                options = {};
-            }
-            const rootUrl = options.rootUrl || 'https://deepreview.googleapis.com/';
-            const parameters = {
-                options: Object.assign({
-                    url: (rootUrl + '/v1/{+name}').replace(/([^:]\/)\/+/g, '$1'),
-                    method: 'DELETE',
-                    apiVersion: '',
-                }, options),
-                params,
-                requiredParams: ['name'],
-                pathParams: ['name'],
-                context: this.context,
-            };
-            if (callback) {
-                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
-            }
-            else {
-                return (0, googleapis_common_1.createAPIRequest)(parameters);
-            }
-        }
-        list(paramsOrCallback, optionsOrCallback, callback) {
-            let params = (paramsOrCallback || {});
-            let options = (optionsOrCallback || {});
-            if (typeof paramsOrCallback === 'function') {
-                callback = paramsOrCallback;
-                params = {};
-                options = {};
-            }
-            if (typeof optionsOrCallback === 'function') {
-                callback = optionsOrCallback;
-                options = {};
-            }
-            const rootUrl = options.rootUrl || 'https://deepreview.googleapis.com/';
-            const parameters = {
-                options: Object.assign({
-                    url: (rootUrl + '/v1/{+name}').replace(/([^:]\/)\/+/g, '$1'),
-                    method: 'GET',
-                    apiVersion: '',
-                }, options),
-                params,
-                requiredParams: ['name'],
-                pathParams: ['name'],
-                context: this.context,
-            };
-            if (callback) {
-                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
-            }
-            else {
-                return (0, googleapis_common_1.createAPIRequest)(parameters);
-            }
-        }
     }
     deepreview_v1.Resource$Operations = Resource$Operations;
     class Resource$Operations$Documents {
@@ -485109,6 +487607,44 @@ var deepreview_v1;
         }
     }
     deepreview_v1.Resource$Operations$Documents$Reviews = Resource$Operations$Documents$Reviews;
+    class Resource$V1 {
+        context;
+        constructor(context) {
+            this.context = context;
+        }
+        getUserQuota(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback || {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://deepreview.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1/{+name}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['name'],
+                pathParams: ['name'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+    }
+    deepreview_v1.Resource$V1 = Resource$V1;
 })(deepreview_v1 || (exports.deepreview_v1 = deepreview_v1 = {}));
 //# sourceMappingURL=v1.js.map
 
@@ -577524,7 +580060,7 @@ var discoveryengine_v1beta;
 // See the License for the specific language governing permissions and
 // limitations under the License.
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.AuthPlus = exports.displayvideo_v4 = exports.displayvideo_v3 = exports.displayvideo_v2 = exports.displayvideo_v1dev = exports.displayvideo_v1beta2 = exports.displayvideo_v1beta = exports.displayvideo_v1 = exports.auth = exports.VERSIONS = void 0;
+exports.AuthPlus = exports.displayvideo_v5 = exports.displayvideo_v4 = exports.displayvideo_v3 = exports.displayvideo_v2 = exports.displayvideo_v1dev = exports.displayvideo_v1beta2 = exports.displayvideo_v1beta = exports.displayvideo_v1 = exports.auth = exports.VERSIONS = void 0;
 exports.displayvideo = displayvideo;
 /*! THIS FILE IS AUTO-GENERATED */
 const googleapis_common_1 = __nccwpck_require__(16782);
@@ -577542,6 +580078,8 @@ const v3_1 = __nccwpck_require__(68113);
 Object.defineProperty(exports, "displayvideo_v3", ({ enumerable: true, get: function () { return v3_1.displayvideo_v3; } }));
 const v4_1 = __nccwpck_require__(3812);
 Object.defineProperty(exports, "displayvideo_v4", ({ enumerable: true, get: function () { return v4_1.displayvideo_v4; } }));
+const v5_1 = __nccwpck_require__(9483);
+Object.defineProperty(exports, "displayvideo_v5", ({ enumerable: true, get: function () { return v5_1.displayvideo_v5; } }));
 exports.VERSIONS = {
     v1: v1_1.displayvideo_v1.Displayvideo,
     v1beta: v1beta_1.displayvideo_v1beta.Displayvideo,
@@ -577550,6 +580088,7 @@ exports.VERSIONS = {
     v2: v2_1.displayvideo_v2.Displayvideo,
     v3: v3_1.displayvideo_v3.Displayvideo,
     v4: v4_1.displayvideo_v4.Displayvideo,
+    v5: v5_1.displayvideo_v5.Displayvideo,
 };
 function displayvideo(versionOrOptions) {
     return (0, googleapis_common_1.getAPI)('displayvideo', versionOrOptions, exports.VERSIONS, this);
@@ -600504,6 +603043,230 @@ var displayvideo_v4;
     displayvideo_v4.Resource$Users = Resource$Users;
 })(displayvideo_v4 || (exports.displayvideo_v4 = displayvideo_v4 = {}));
 //# sourceMappingURL=v4.js.map
+
+/***/ }),
+
+/***/ 9483:
+/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
+
+
+// Copyright 2020 Google LLC
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//    http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.displayvideo_v5 = void 0;
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-empty-interface */
+/* eslint-disable @typescript-eslint/no-namespace */
+/* eslint-disable no-irregular-whitespace */
+const googleapis_common_1 = __nccwpck_require__(16782);
+var displayvideo_v5;
+(function (displayvideo_v5) {
+    /**
+     * Display &amp; Video 360 API
+     *
+     * Display &amp; Video 360 API allows users to automate complex Display &amp; Video 360 workflows, such as creating insertion orders and setting targeting options for individual line items.
+     *
+     * @example
+     * ```js
+     * const {google} = require('googleapis');
+     * const displayvideo = google.displayvideo('v5');
+     * ```
+     */
+    class Displayvideo {
+        context;
+        media;
+        sdfdownloadtasks;
+        sdfuploadtasks;
+        constructor(options, google) {
+            this.context = {
+                _options: options || {},
+                google,
+            };
+            this.media = new Resource$Media(this.context);
+            this.sdfdownloadtasks = new Resource$Sdfdownloadtasks(this.context);
+            this.sdfuploadtasks = new Resource$Sdfuploadtasks(this.context);
+        }
+    }
+    displayvideo_v5.Displayvideo = Displayvideo;
+    class Resource$Media {
+        context;
+        constructor(context) {
+            this.context = context;
+        }
+        download(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback || {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://displayvideo.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/download/{+resourceName}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['resourceName'],
+                pathParams: ['resourceName'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        upload(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback || {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://displayvideo.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/media/{+resourceName}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'POST',
+                    apiVersion: '',
+                }, options),
+                params,
+                mediaUrl: (rootUrl + '/upload/media/{+resourceName}').replace(/([^:]\/)\/+/g, '$1'),
+                requiredParams: ['resourceName'],
+                pathParams: ['resourceName'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+    }
+    displayvideo_v5.Resource$Media = Resource$Media;
+    class Resource$Sdfdownloadtasks {
+        context;
+        operations;
+        constructor(context) {
+            this.context = context;
+            this.operations = new Resource$Sdfdownloadtasks$Operations(this.context);
+        }
+    }
+    displayvideo_v5.Resource$Sdfdownloadtasks = Resource$Sdfdownloadtasks;
+    class Resource$Sdfdownloadtasks$Operations {
+        context;
+        constructor(context) {
+            this.context = context;
+        }
+        get(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://displayvideo.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v5/{+name}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['name'],
+                pathParams: ['name'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+    }
+    displayvideo_v5.Resource$Sdfdownloadtasks$Operations = Resource$Sdfdownloadtasks$Operations;
+    class Resource$Sdfuploadtasks {
+        context;
+        operations;
+        constructor(context) {
+            this.context = context;
+            this.operations = new Resource$Sdfuploadtasks$Operations(this.context);
+        }
+    }
+    displayvideo_v5.Resource$Sdfuploadtasks = Resource$Sdfuploadtasks;
+    class Resource$Sdfuploadtasks$Operations {
+        context;
+        constructor(context) {
+            this.context = context;
+        }
+        get(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://displayvideo.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v5/{+name}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['name'],
+                pathParams: ['name'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+    }
+    displayvideo_v5.Resource$Sdfuploadtasks$Operations = Resource$Sdfuploadtasks$Operations;
+})(displayvideo_v5 || (exports.displayvideo_v5 = displayvideo_v5 = {}));
+//# sourceMappingURL=v5.js.map
 
 /***/ }),
 
@@ -642999,6 +645762,38 @@ var firebasecrashlytics_v1alpha;
             this.issues = new Resource$Projects$Apps$Issues(this.context);
             this.reports = new Resource$Projects$Apps$Reports(this.context);
             this.users = new Resource$Projects$Apps$Users(this.context);
+        }
+        generateAlertPolicy(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://firebasecrashlytics.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1alpha/{+name}:generateAlertPolicy').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'POST',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['name'],
+                pathParams: ['name'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
         }
     }
     firebasecrashlytics_v1alpha.Resource$Projects$Apps = Resource$Projects$Apps;
@@ -764104,7 +766899,7 @@ var mybusinessaccountmanagement_v1;
     /**
      * My Business Account Management API
      *
-     * The My Business Account Management API provides an interface for managing access to a location on Google. Note - If you have a quota of 0 after enabling the API, please request for GBP API access.
+     * The My Business Account Management API provides an interface for managing access to a location on Google. Note: If you have a quota of 0 after enabling the API, please request GBP API access at https://developers.google.com/my-business/content/prereqs#request-access.
      *
      * @example
      * ```js
@@ -764962,7 +767757,7 @@ var mybusinessbusinessinformation_v1;
     /**
      * My Business Business Information API
      *
-     * The My Business Business Information API provides an interface for managing business information. Note - If you have a quota of 0 after enabling the API, please request for GBP API access.
+     * The My Business Business Information API provides an interface for managing business information on Google. Note: If you have a quota of 0 after enabling the API, please request GBP API access at https://developers.google.com/my-business/content/prereqs#request-access.
      *
      * @example
      * ```js
@@ -765611,7 +768406,7 @@ var mybusinesslodging_v1;
     /**
      * My Business Lodging API
      *
-     * The My Business Lodging API enables managing lodging business information on Google. Note - If you have a quota of 0 after enabling the API, please request for GBP API access.
+     * The My Business Lodging API enables managing lodging business information on Google. Note: If you have a quota of 0 after enabling the API, please request GBP API access at https://developers.google.com/my-business/content/prereqs#request-access.
      *
      * @example
      * ```js
@@ -765814,7 +768609,7 @@ var mybusinessnotifications_v1;
     /**
      * My Business Notifications API
      *
-     * The My Business Notification Settings API enables managing notification settings for business accounts. Note - If you have a quota of 0 after enabling the API, please request for GBP API access.
+     * The My Business Notification Settings API enables managing notification settings for business accounts. Note: If you have a quota of 0 after enabling the API, please request GBP API access at https://developers.google.com/my-business/content/prereqs#request-access.
      *
      * @example
      * ```js
@@ -765976,7 +768771,7 @@ var mybusinessplaceactions_v1;
     /**
      * My Business Place Actions API
      *
-     * The My Business Place Actions API provides an interface for managing place action links of a location on Google. Note - If you have a quota of 0 after enabling the API, please request for GBP API access.
+     * The My Business Place Actions API provides an interface for managing place action links of a location on Google. Note: If you have a quota of 0 after enabling the API, please request GBP API access at https://developers.google.com/my-business/content/prereqs#request-access.
      *
      * @example
      * ```js
@@ -808035,6 +810830,7 @@ var oracledatabase_v1;
         cloudExadataInfrastructures;
         cloudVmClusters;
         databaseCharacterSets;
+        databaseConnections;
         databases;
         dbSystemInitialStorageSizes;
         dbSystems;
@@ -808069,6 +810865,8 @@ var oracledatabase_v1;
             this.cloudVmClusters = new Resource$Projects$Locations$Cloudvmclusters(this.context);
             this.databaseCharacterSets =
                 new Resource$Projects$Locations$Databasecharactersets(this.context);
+            this.databaseConnections =
+                new Resource$Projects$Locations$Databaseconnections(this.context);
             this.databases = new Resource$Projects$Locations$Databases(this.context);
             this.dbSystemInitialStorageSizes =
                 new Resource$Projects$Locations$Dbsysteminitialstoragesizes(this.context);
@@ -809253,6 +812051,244 @@ var oracledatabase_v1;
         }
     }
     oracledatabase_v1.Resource$Projects$Locations$Databasecharactersets = Resource$Projects$Locations$Databasecharactersets;
+    class Resource$Projects$Locations$Databaseconnections {
+        context;
+        constructor(context) {
+            this.context = context;
+        }
+        create(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params =
+                    {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://oracledatabase.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1/{+parent}/databaseConnections').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'POST',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['parent'],
+                pathParams: ['parent'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        delete(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params =
+                    {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://oracledatabase.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1/{+name}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'DELETE',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['name'],
+                pathParams: ['name'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        executeSql(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params =
+                    {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://oracledatabase.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1/{+name}:executeSql').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'POST',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['name'],
+                pathParams: ['name'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        get(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params =
+                    {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://oracledatabase.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1/{+name}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['name'],
+                pathParams: ['name'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        list(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params =
+                    {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://oracledatabase.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1/{+parent}/databaseConnections').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['parent'],
+                pathParams: ['parent'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        patch(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params =
+                    {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://oracledatabase.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1/{+name}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'PATCH',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['name'],
+                pathParams: ['name'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        test(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params =
+                    {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://oracledatabase.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1/{+name}:test').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'POST',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['name'],
+                pathParams: ['name'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+    }
+    oracledatabase_v1.Resource$Projects$Locations$Databaseconnections = Resource$Projects$Locations$Databaseconnections;
     class Resource$Projects$Locations$Databases {
         context;
         constructor(context) {
@@ -810923,9 +813959,12 @@ var oracledatabase_v1;
     oracledatabase_v1.Resource$Projects$Locations$Goldengatedeploymentversions = Resource$Projects$Locations$Goldengatedeploymentversions;
     class Resource$Projects$Locations$Odbnetworks {
         context;
+        odbDnsZones;
         odbSubnets;
         constructor(context) {
             this.context = context;
+            this.odbDnsZones =
+                new Resource$Projects$Locations$Odbnetworks$Odbdnszones(this.context);
             this.odbSubnets = new Resource$Projects$Locations$Odbnetworks$Odbsubnets(this.context);
         }
         create(paramsOrCallback, optionsOrCallback, callback) {
@@ -811056,8 +814095,179 @@ var oracledatabase_v1;
                 return (0, googleapis_common_1.createAPIRequest)(parameters);
             }
         }
+        patch(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://oracledatabase.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1/{+name}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'PATCH',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['name'],
+                pathParams: ['name'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
     }
     oracledatabase_v1.Resource$Projects$Locations$Odbnetworks = Resource$Projects$Locations$Odbnetworks;
+    class Resource$Projects$Locations$Odbnetworks$Odbdnszones {
+        context;
+        constructor(context) {
+            this.context = context;
+        }
+        create(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params =
+                    {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://oracledatabase.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1/{+parent}/odbDnsZones').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'POST',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['parent'],
+                pathParams: ['parent'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        delete(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params =
+                    {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://oracledatabase.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1/{+name}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'DELETE',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['name'],
+                pathParams: ['name'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        get(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params =
+                    {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://oracledatabase.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1/{+name}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['name'],
+                pathParams: ['name'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        list(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params =
+                    {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://oracledatabase.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1/{+parent}/odbDnsZones').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['parent'],
+                pathParams: ['parent'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+    }
+    oracledatabase_v1.Resource$Projects$Locations$Odbnetworks$Odbdnszones = Resource$Projects$Locations$Odbnetworks$Odbdnszones;
     class Resource$Projects$Locations$Odbnetworks$Odbsubnets {
         context;
         constructor(context) {
@@ -918630,13 +921840,13 @@ var sqladmin_v1;
             const parameters = {
                 options: Object.assign({
                     url: (rootUrl +
-                        '/v1/projects/{project}/instances/{instance}/workloadCaptures/{workloadId}:stopReplay').replace(/([^:]\/)\/+/g, '$1'),
+                        '/v1/projects/{project}/instances/{instance}/workloadCaptures:stopReplay').replace(/([^:]\/)\/+/g, '$1'),
                     method: 'POST',
                     apiVersion: '',
                 }, options),
                 params,
-                requiredParams: ['project', 'instance', 'workloadId'],
-                pathParams: ['instance', 'project', 'workloadId'],
+                requiredParams: ['project', 'instance'],
+                pathParams: ['instance', 'project'],
                 context: this.context,
             };
             if (callback) {
@@ -921560,13 +924770,13 @@ var sqladmin_v1beta4;
             const parameters = {
                 options: Object.assign({
                     url: (rootUrl +
-                        '/sql/v1beta4/projects/{project}/instances/{instance}/workloadCaptures/{workloadId}:stopReplay').replace(/([^:]\/)\/+/g, '$1'),
+                        '/sql/v1beta4/projects/{project}/instances/{instance}/workloadCaptures:stopReplay').replace(/([^:]\/)\/+/g, '$1'),
                     method: 'POST',
                     apiVersion: '',
                 }, options),
                 params,
-                requiredParams: ['project', 'instance', 'workloadId'],
-                pathParams: ['instance', 'project', 'workloadId'],
+                requiredParams: ['project', 'instance'],
+                pathParams: ['instance', 'project'],
                 context: this.context,
             };
             if (callback) {
@@ -954645,6 +957855,7 @@ var vmwareengine_v1;
     class Resource$Projects$Locations {
         context;
         announcements;
+        capacityAllocations;
         datastores;
         dnsBindPermission;
         networkPeerings;
@@ -954657,6 +957868,8 @@ var vmwareengine_v1;
         constructor(context) {
             this.context = context;
             this.announcements = new Resource$Projects$Locations$Announcements(this.context);
+            this.capacityAllocations =
+                new Resource$Projects$Locations$Capacityallocations(this.context);
             this.datastores = new Resource$Projects$Locations$Datastores(this.context);
             this.dnsBindPermission =
                 new Resource$Projects$Locations$Dnsbindpermission(this.context);
@@ -954839,6 +958052,46 @@ var vmwareengine_v1;
         }
     }
     vmwareengine_v1.Resource$Projects$Locations$Announcements = Resource$Projects$Locations$Announcements;
+    class Resource$Projects$Locations$Capacityallocations {
+        context;
+        constructor(context) {
+            this.context = context;
+        }
+        list(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params =
+                    {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://vmwareengine.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1/{+parent}/capacityAllocations').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['parent'],
+                pathParams: ['parent'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+    }
+    vmwareengine_v1.Resource$Projects$Locations$Capacityallocations = Resource$Projects$Locations$Capacityallocations;
     class Resource$Projects$Locations$Datastores {
         context;
         constructor(context) {
@@ -974883,7 +978136,7 @@ __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export_
 __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = void 0;
 __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = void 0;
 __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = void 0;
-__webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = void 0;
+__webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = void 0;
 const googleapis_1 = __nccwpck_require__(19376);
 __webpack_unused_export__ = ({ enumerable: true, get: function () { return googleapis_1.GoogleApis; } });
 const google = new googleapis_1.GoogleApis();
@@ -975382,6 +978635,8 @@ var v3_7 = __nccwpck_require__(68113);
 __webpack_unused_export__ = ({ enumerable: true, get: function () { return v3_7.displayvideo_v3; } });
 var v4_2 = __nccwpck_require__(3812);
 __webpack_unused_export__ = ({ enumerable: true, get: function () { return v4_2.displayvideo_v4; } });
+var v5_2 = __nccwpck_require__(9483);
+__webpack_unused_export__ = ({ enumerable: true, get: function () { return v5_2.displayvideo_v5; } });
 var v2_24 = __nccwpck_require__(31099);
 __webpack_unused_export__ = ({ enumerable: true, get: function () { return v2_24.dlp_v2; } });
 var v1_105 = __nccwpck_require__(62399);
@@ -975774,8 +979029,8 @@ var v1alpha_28 = __nccwpck_require__(89675);
 __webpack_unused_export__ = ({ enumerable: true, get: function () { return v1alpha_28.oslogin_v1alpha; } });
 var v1beta_29 = __nccwpck_require__(53749);
 __webpack_unused_export__ = ({ enumerable: true, get: function () { return v1beta_29.oslogin_v1beta; } });
-var v5_2 = __nccwpck_require__(7941);
-__webpack_unused_export__ = ({ enumerable: true, get: function () { return v5_2.pagespeedonline_v5; } });
+var v5_3 = __nccwpck_require__(7941);
+__webpack_unused_export__ = ({ enumerable: true, get: function () { return v5_3.pagespeedonline_v5; } });
 var v1_179 = __nccwpck_require__(56010);
 __webpack_unused_export__ = ({ enumerable: true, get: function () { return v1_179.parallelstore_v1; } });
 var v1beta_30 = __nccwpck_require__(83368);
@@ -975900,8 +979155,8 @@ var v1beta1_54 = __nccwpck_require__(91695);
 __webpack_unused_export__ = ({ enumerable: true, get: function () { return v1beta1_54.saasservicemgmt_v1beta1; } });
 var v4_5 = __nccwpck_require__(5647);
 __webpack_unused_export__ = ({ enumerable: true, get: function () { return v4_5.safebrowsing_v4; } });
-var v5_3 = __nccwpck_require__(71288);
-__webpack_unused_export__ = ({ enumerable: true, get: function () { return v5_3.safebrowsing_v5; } });
+var v5_4 = __nccwpck_require__(71288);
+__webpack_unused_export__ = ({ enumerable: true, get: function () { return v5_4.safebrowsing_v5; } });
 var v1alpha1_17 = __nccwpck_require__(87892);
 __webpack_unused_export__ = ({ enumerable: true, get: function () { return v1alpha1_17.sasportal_v1alpha1; } });
 var v1_208 = __nccwpck_require__(46893);
